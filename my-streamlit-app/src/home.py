@@ -10,7 +10,7 @@ class StreamlitApp:
         st.set_page_config(
             page_title="Login",
             page_icon="🔐",
-            layout="centered",
+            layout="wide",
             menu_items={}  # ✅ This removes the default Streamlit navigation
         )
 
