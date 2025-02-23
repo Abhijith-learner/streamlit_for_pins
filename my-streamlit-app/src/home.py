@@ -34,7 +34,7 @@ class StreamlitApp:
     def main_app(self):
         with st.sidebar:
             st.title("Navigation")
-            page = st.radio("Go to", ["Home", "Page 1", "Page 2"])
+            page = st.radio("Go to", ["Home", "Page 1", "Page 2",'Page 3'])
 
             if st.button("Logout"):
                 st.session_state.authenticated = False
@@ -46,9 +46,11 @@ class StreamlitApp:
             self.page1()
         elif page == "Page 2":
             self.page2()
+        elif page == "Page 3":
+            self.page3()
 
     def home_page(self):
-        st.title("🏠 Welcome to My Streamlit App")
+        st.title("🏠 Welcome to your Personal product analysis DASHBOARD")
         st.write("You are logged in!")
 
     def page1(self):
@@ -58,6 +60,10 @@ class StreamlitApp:
     def page2(self):
         import page.page2 as Page2
         Page2.run()
+
+    def page3(self):
+        import page.page3 as Page3
+        Page3.run()    
 
     def run(self):
         if not st.session_state.authenticated:
